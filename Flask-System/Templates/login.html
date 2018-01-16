@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Φόρμα Εισόδου</title>
+  <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="static/style.css">  
+  <!-- Παρακάτω ακολουθούν οι εντολές css-->
+  <style>
+  h2 {
+    color: black;
+    font-family: Microsoft JhengHei UI Light;
+    font-size: 200%;
+
+}
+</style>
+</head>
+
+<body>
+<!-- Ακολουθεί ο κώδικας της φόρμας εισόδου-->
+    <div class="wrapper">
+    <form class="form-signin" action="" method="post">     
+      <h2 class="form-signin-heading" align="center">Είσοδος Χρήστη</h2>
+      <input type="text" class="form-control" name="username" placeholder="Όνομα Χρήστη" value="{{
+          request.form.username }}" />
+      <input type="password" class="form-control" name="password" placeholder="Κωδικός Πρόσβασης" value="{{
+          request.form.password }}"/>      
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Είσοδος</button>   
+    </form><br>
+	<!--Αν υπάρξει σφάλμα,εμφάνισε μήνυμα σφάλματος-->
+	{% if error %}
+        <p class="error" align="center"><strong>Σφάλμα:</strong> {{ error }}
+      {% endif %}
+  </div>
+  
+  
+
+</body>
+
+</html>
